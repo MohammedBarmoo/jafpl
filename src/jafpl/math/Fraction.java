@@ -5,7 +5,6 @@ package jafpl.math;
 
 /**
  * @author Mohammed Barmo
- * @author Erik Itter
  *
  */
 public class Fraction implements Comparable<Fraction> {
@@ -31,9 +30,13 @@ public class Fraction implements Comparable<Fraction> {
 	}
 
 	public Fraction plus(Fraction b) {
-		return null;
-	}
+		long numeratorA = getNumerator() *  b.getDenominator();
+		long denominator = getDenominator() * b.getDenominator();
+		long numeratorB  = b.getNumerator() *  getDenominator(); ;
+		
+		return new Fraction (numeratorA + numeratorB , denominator );
 
+	}
 	public Fraction minus(Fraction b) {
 		return plus(new Fraction(b.getNumerator() * -1, b.getDenominator()));
 	}
