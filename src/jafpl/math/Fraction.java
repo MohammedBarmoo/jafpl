@@ -32,7 +32,7 @@ public class Fraction implements Comparable<Fraction> {
 	public Fraction plus(Fraction b) {
 		long numeratorA = getNumerator() *  b.getDenominator();
 		long denominator = getDenominator() * b.getDenominator();
-		long numeratorB  = b.getNumerator() *  getDenominator(); ;
+		long numeratorB  = b.getNumerator() *  getDenominator();
 		
 		return new Fraction (numeratorA + numeratorB , denominator );
 
