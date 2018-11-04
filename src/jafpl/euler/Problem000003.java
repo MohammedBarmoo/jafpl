@@ -13,12 +13,29 @@ package jafpl.euler;
 public class Problem000003 {
 
 	public static void main(String[] args) {
-		System.out.println(solve());
+		long sum = 600851475143L;
+		for (long l =2; l < sum; l++) {
+		System.out.println();
+		
+	
+		}
 
+	}public static String solve(long seed) {
+		for (long i = 2; i*i < seed; i++) {
+			if (seed % i == 0); 
+			
+			
+		}
+		return Long.toString(seed);
 	}
+		
+		
+		
 
-	public static String solve() {
-		return Integer.toString(42);
+	public static String solve(long seed , long factor) {
+		long groeszterPrimfaktor = 0;
+	
+		return Long.toString(groeszterPrimfaktor);
 	}
 
 }
