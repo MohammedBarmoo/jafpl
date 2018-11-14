@@ -7,7 +7,6 @@ import de.itter.math.Algorithms;
 
 /**
  * @author Mohammed Barmo
- * @author Erik Itter
  *
  */
 public class Fraction implements Comparable<Fraction> {
@@ -33,7 +32,9 @@ public class Fraction implements Comparable<Fraction> {
 	}
 
 	public Fraction plus(Fraction summand) {
-		return new Fraction(getNumerator() * summand.getDenominator() + summand.getNumerator() * getDenominator(),
+		return new Fraction(
+				getNumerator() * summand.getDenominator()
+						+ summand.getNumerator() * getDenominator(),
 				getDenominator() * summand.getDenominator());
 	}
 
@@ -42,16 +43,19 @@ public class Fraction implements Comparable<Fraction> {
 	}
 
 	public Fraction times(Fraction factor) {
-		return new Fraction(getNumerator() * factor.getNumerator(), getDenominator() * factor.getDenominator());
+		return new Fraction(getNumerator() * factor.getNumerator(),
+				getDenominator() * factor.getDenominator());
 	}
 
 	public Fraction divideBy(Fraction divisor) {
-		return times(new Fraction(divisor.getDenominator(), divisor.getNumerator()));
+		return times(
+				new Fraction(divisor.getDenominator(), divisor.getNumerator()));
 	}
 
 	@Override
 	public String toString() {
-		return new StringBuffer().append(numerator).append("/").append(denominator).toString();
+		return new StringBuffer().append(numerator).append("/")
+				.append(denominator).toString();
 	}
 
 	/**
@@ -62,9 +66,12 @@ public class Fraction implements Comparable<Fraction> {
 	@Override
 	public int compareTo(Fraction b) {
 
-		long commonDenominator = Algorithms.lcm(getDenominator(), b.getDenominator());
-		long numeratorA = getNumerator() * (commonDenominator / getDenominator());
-		long numeratorB = b.getNumerator() * (commonDenominator / b.getDenominator());
+		long commonDenominator = Algorithms.lcm(getDenominator(),
+				b.getDenominator());
+		long numeratorA = getNumerator()
+				* (commonDenominator / getDenominator());
+		long numeratorB = b.getNumerator()
+				* (commonDenominator / b.getDenominator());
 
 		if (numeratorA < numeratorB)
 			return -1;
@@ -77,8 +84,8 @@ public class Fraction implements Comparable<Fraction> {
 
 	/**
 	 * Not mathematical equality! 2/4 does not equal 1/2 for this method. Use
-	 * <code>simplify</code> before checking for equality if you mean mathematical
-	 * equality.
+	 * <code>simplify</code> before checking for equality if you mean
+	 * mathematical equality.
 	 */
 	@Override
 	public boolean equals(Object obj) {
